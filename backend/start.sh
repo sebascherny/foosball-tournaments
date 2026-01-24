@@ -2,9 +2,9 @@
 
 # Wait for database to be ready
 echo "Waiting for database..."
-while ! nc -z db 5432; do
-  sleep 0.1
-done
+# while ! nc -z db 5432; do
+#   sleep 0.1
+# done
 echo "Database port is open, waiting for PostgreSQL to be ready..."
 
 # Additional wait for PostgreSQL to be fully ready
