@@ -119,7 +119,7 @@ def login_team(request):
             }, status=status.HTTP_401_UNAUTHORIZED)
         
         # Authenticate user
-        user = authenticate(username=username, password=password)
+        user = authenticate(request=request, username=username, password=password)
         if user is None:
             return Response({
                 'error': 'Invalid team name or password'

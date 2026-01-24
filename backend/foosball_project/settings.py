@@ -53,7 +53,7 @@ MIDDLEWARE = [
 ]
 
 AUTHENTICATION_BACKENDS = [
-    "axes.backends.AxesStandaloneBackend",   # Axes checks lockouts
+    "axes.backends.AxesBackend",   # Axes with Django auth integration
     "django.contrib.auth.backends.ModelBackend",  # Default Django auth
 ]
 

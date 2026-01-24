@@ -29,7 +29,7 @@ def admin_login(request):
                 'error': 'Username and password are required'
             }, status=status.HTTP_400_BAD_REQUEST)
         
-        user = authenticate(username=username, password=password)
+        user = authenticate(request=request, username=username, password=password)
         
         if user and (user.is_staff or user.is_superuser):
             token, created = Token.objects.get_or_create(user=user)
