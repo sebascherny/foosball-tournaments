@@ -1,0 +1,146 @@
+[
+  {
+    "model": "tournaments.matchseries_matches",
+    "pk": 1,
+    "fields": {
+      "matchseries_id": 1,
+      "match_id": 1
+    }
+  },
+  {
+    "model": "tournaments.matchseries_matches",
+    "pk": 2,
+    "fields": {
+      "matchseries_id": 2,
+      "match_id": 2
+    }
+  },
+  {
+    "model": "tournaments.matchseries_matches",
+    "pk": 3,
+    "fields": {
+      "matchseries_id": 3,
+      "match_id": 3
+    }
+  },
+  {
+    "model": "tournaments.matchseries_matches",
+    "pk": 4,
+    "fields": {
+      "matchseries_id": 4,
+      "match_id": 4
+    }
+  },
+  {
+    "model": "tournaments.matchseries_matches",
+    "pk": 5,
+    "fields": {
+      "matchseries_id": 5,
+      "match_id": 5
+    }
+  },
+  {
+    "model": "tournaments.matchseries_matches",
+    "pk": 6,
+    "fields": {
+      "matchseries_id": 6,
+      "match_id": 6
+    }
+  },
+  {
+    "model": "tournaments.matchseries_matches",
+    "pk": 7,
+    "fields": {
+      "matchseries_id": 7,
+      "match_id": 7
+    }
+  },
+  {
+    "model": "tournaments.matchseries_matches",
+    "pk": 8,
+    "fields": {
+      "matchseries_id": 8,
+      "match_id": 8
+    }
+  },
+  {
+    "model": "tournaments.matchseries_matches",
+    "pk": 9,
+    "fields": {
+      "matchseries_id": 9,
+      "match_id": 9
+    }
+  },
+  {
+    "model": "tournaments.matchseries_matches",
+    "pk": 10,
+    "fields": {
+      "matchseries_id": 10,
+      "match_id": 10
+    }
+  },
+  {
+    "model": "tournaments.matchseries_matches",
+    "pk": 11,
+    "fields": {
+      "matchseries_id": 11,
+      "match_id": 11
+    }
+  },
+  {
+    "model": "tournaments.matchseries_matches",
+    "pk": 12,
+    "fields": {
+      "matchseries_id": 12,
+      "match_id": 12
+    }
+  },
+  {
+    "model": "tournaments.matchseries_matches",
+    "pk": 13,
+    "fields": {
+      "matchseries_id": 13,
+      "match_id": 13
+    }
+  },
+  {
+    "model": "tournaments.matchseries_matches",
+    "pk": 14,
+    "fields": {
+      "matchseries_id": 14,
+      "match_id": 14
+    }
+  },
+  {
+    "model": "tournaments.matchseries_matches",
+    "pk": 15,
+    "fields": {
+      "matchseries_id": 15,
+      "match_id": 15
+    }
+  },
+  {
+    "model": "tournaments.matchseries_matches",
+    "pk": 16,
+    "fields": {
+      "matchseries_id": 16,
+      "match_id": 16
+    }
+  },
+  {
+    "model": "tournaments.matchseries_matches",
+    "pk": 17,
+    "fields": {
+      "matchseries_id": 17,
+      "match_id": 17
+    }
+  },
+  {
+    "model": "tournaments.matchseries_matches",
+    "pk": 18,
+    "fields": {
+      "matchseries_id": 18,
+      "match_id": 18
+    }
+  }
+]

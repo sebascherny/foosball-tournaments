@@ -1,0 +1,110 @@
+[
+  {
+    "model": "tournaments.team",
+    "pk": 1,
+    "fields": {
+      "name": "Los Campeones",
+      "group": "A",
+      "created_at": "2024-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "tournaments.team",
+    "pk": 2,
+    "fields": {
+      "name": "Futbol Masters",
+      "group": "A",
+      "created_at": "2024-01-01T10:15:00Z"
+    }
+  },
+  {
+    "model": "tournaments.team",
+    "pk": 3,
+    "fields": {
+      "name": "Goal Crushers",
+      "group": "A",
+      "created_at": "2024-01-01T10:30:00Z"
+    }
+  },
+  {
+    "model": "tournaments.team",
+    "pk": 4,
+    "fields": {
+      "name": "Table Kings",
+      "group": "A",
+      "created_at": "2024-01-01T10:45:00Z"
+    }
+  },
+  {
+    "model": "tournaments.team",
+    "pk": 5,
+    "fields": {
+      "name": "Thunder Strikers",
+      "group": "B",
+      "created_at": "2024-01-01T11:00:00Z"
+    }
+  },
+  {
+    "model": "tournaments.team",
+    "pk": 6,
+    "fields": {
+      "name": "Lightning Bolts",
+      "group": "B",
+      "created_at": "2024-01-01T11:15:00Z"
+    }
+  },
+  {
+    "model": "tournaments.team",
+    "pk": 7,
+    "fields": {
+      "name": "Fire Dragons",
+      "group": "B",
+      "created_at": "2024-01-01T11:30:00Z"
+    }
+  },
+  {
+    "model": "tournaments.team",
+    "pk": 8,
+    "fields": {
+      "name": "Ice Warriors",
+      "group": "B",
+      "created_at": "2024-01-01T11:45:00Z"
+    }
+  },
+  {
+    "model": "tournaments.team",
+    "pk": 9,
+    "fields": {
+      "name": "Storm Eagles",
+      "group": "C",
+      "created_at": "2024-01-01T12:00:00Z"
+    }
+  },
+  {
+    "model": "tournaments.team",
+    "pk": 10,
+    "fields": {
+      "name": "Golden Hawks",
+      "group": "C",
+      "created_at": "2024-01-01T12:15:00Z"
+    }
+  },
+  {
+    "model": "tournaments.team",
+    "pk": 11,
+    "fields": {
+      "name": "Silver Wolves",
+      "group": "C",
+      "created_at": "2024-01-01T12:30:00Z"
+    }
+  },
+  {
+    "model": "tournaments.team",
+    "pk": 12,
+    "fields": {
+      "name": "Diamond Panthers",
+      "group": "C",
+      "created_at": "2024-01-01T12:45:00Z"
+    }
+  }
+]
