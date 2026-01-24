@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import axios from 'axios';
+import { getApiUrl } from '../../utils/api';
 
 interface GalleryImage {
   id: number;
@@ -18,7 +19,7 @@ const GallerySection: React.FC = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/gallery/');
+        const response = await axios.get(getApiUrl('/api/gallery/'));
         setImages(response.data);
       } catch (error) {
         console.error('Error fetching gallery images:', error);

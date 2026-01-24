@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getApiUrl } from '../utils/api';
 import axios from 'axios';
 
 interface AuthModalProps {
@@ -35,7 +36,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onAuthSuccess })
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:8000/api/auth/login/', loginData);
+      const response = await axios.post(getApiUrl('/api/auth/login/'), loginData);
       const { token, team } = response.data;
       
       // Store token in localStorage
@@ -69,7 +70,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onAuthSuccess })
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/api/auth/register/', {
+      const response = await axios.post(getApiUrl('/api/auth/register/'), {
         team_name: registerData.team_name,
         password: registerData.password,
         participants: registerData.participants

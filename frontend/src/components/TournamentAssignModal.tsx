@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { getApiUrl } from '../utils/api';
 
 interface Tournament {
   id: number;
@@ -35,7 +36,7 @@ const TournamentAssignModal: React.FC<TournamentAssignModalProps> = ({
   const fetchTournaments = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:8000/api/auth/tournaments/', {
+      const response = await fetch(getApiUrl('/api/auth/tournaments/'), {
         headers: {
           'Authorization': `Token ${authToken}`,
         },
@@ -64,7 +65,7 @@ const TournamentAssignModal: React.FC<TournamentAssignModalProps> = ({
       setLoading(true);
       setError(null);
 
-      const response = await fetch('http://localhost:8000/api/auth/assign-tournament/', {
+      const response = await fetch(getApiUrl('/api/auth/assign-tournament/'), {
         method: 'POST',
         headers: {
           'Authorization': `Token ${authToken}`,

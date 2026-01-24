@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { getApiUrl } from '../utils/api';
 import axios from 'axios';
 
 interface Team {
@@ -41,7 +42,7 @@ const MatchLoadModal: React.FC<MatchLoadModalProps> = ({ isOpen, onClose, authTo
 
   const fetchOpponentTeams = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/auth/opponents/', {
+      const response = await axios.get(getApiUrl('/api/auth/opponents/'), {
         headers: { Authorization: `Token ${authToken}` }
       });
       setOpponentTeams(response.data.teams);
@@ -52,7 +53,7 @@ const MatchLoadModal: React.FC<MatchLoadModalProps> = ({ isOpen, onClose, authTo
 
   const fetchRecentMatches = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/api/auth/my-matches/', {
+      const response = await axios.get(getApiUrl('/api/auth/my-matches/'), {
         headers: { Authorization: `Token ${authToken}` }
       });
       setRecentMatches(response.data.matches.slice(0, 5)); // Show last 5 matches
@@ -75,7 +76,7 @@ const MatchLoadModal: React.FC<MatchLoadModalProps> = ({ isOpen, onClose, authTo
 
     try {
       const response = await axios.post(
-        'http://localhost:8000/api/auth/load-match/',
+        getApiUrl('/api/auth/load-match/'),
         {
           opponent_team_id: selectedOpponent,
           user_goals: userGoals,

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { getApiUrl } from '../../utils/api';
 
 interface Classification {
   id: number;
@@ -25,7 +26,7 @@ const ClasificacionSection: React.FC<ClasificacionSectionProps> = ({ group }) =>
   useEffect(() => {
     const fetchClassifications = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/classifications/?group=${group}`);
+        const response = await axios.get(getApiUrl(`/api/classifications/?group=${group}`));
         setClassifications(response.data);
       } catch (error) {
         console.error('Error fetching classifications:', error);

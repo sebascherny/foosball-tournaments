@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { getApiUrl } from '../utils/api';
 
 interface Tournament {
   id: number;
@@ -66,7 +67,7 @@ const AdminPanel: React.FC = () => {
       setLoading(true);
       setError(null);
 
-      const response = await fetch('http://localhost:8000/api/admin/login/', {
+      const response = await fetch(getApiUrl('/api/admin/login/'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -102,7 +103,7 @@ const AdminPanel: React.FC = () => {
 
   const fetchTournaments = async (token: string) => {
     try {
-      const response = await fetch('http://localhost:8000/api/admin/tournaments/', {
+      const response = await fetch(getApiUrl('/api/admin/tournaments/'), {
         headers: {
           'Authorization': `Token ${token}`,
         },
@@ -124,7 +125,7 @@ const AdminPanel: React.FC = () => {
 
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:8000/api/admin/tournaments/${tournamentId}/teams/`, {
+      const response = await fetch(getApiUrl(`/api/admin/tournaments/${tournamentId}/teams/`), {
         headers: {
           'Authorization': `Token ${adminToken}`,
         },
@@ -150,7 +151,7 @@ const AdminPanel: React.FC = () => {
       setLoading(true);
       setError(null);
 
-      const response = await fetch('http://localhost:8000/api/admin/tournaments/create/', {
+      const response = await fetch(getApiUrl('/api/admin/tournaments/create/'), {
         method: 'POST',
         headers: {
           'Authorization': `Token ${adminToken}`,
@@ -182,7 +183,7 @@ const AdminPanel: React.FC = () => {
       setLoading(true);
       const assignments = teamIds.map(teamId => ({ team_id: teamId, group }));
 
-      const response = await fetch(`http://localhost:8000/api/admin/tournaments/${selectedTournament}/assign-groups/`, {
+      const response = await fetch(getApiUrl(`/api/admin/tournaments/${selectedTournament}/assign-groups/`), {
         method: 'POST',
         headers: {
           'Authorization': `Token ${adminToken}`,
@@ -209,7 +210,7 @@ const AdminPanel: React.FC = () => {
 
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:8000/api/admin/tournaments/${selectedTournament}/random-groups/`, {
+      const response = await fetch(getApiUrl(`/api/admin/tournaments/${selectedTournament}/random-groups/`), {
         method: 'POST',
         headers: {
           'Authorization': `Token ${adminToken}`,

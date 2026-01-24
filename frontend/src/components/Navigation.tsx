@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import AuthModal from './AuthModal';
 import MatchLoadModal from './MatchLoadModal';
 import TournamentAssignModal from './TournamentAssignModal';
+import { getApiUrl } from '../utils/api';
 
 interface NavigationProps {
   activeSection: string;
@@ -43,7 +44,7 @@ const Navigation: React.FC<NavigationProps> = ({
   const handleLogout = () => {
     if (authToken) {
       // Call logout API
-      fetch('http://localhost:8000/api/auth/logout/', {
+      fetch(getApiUrl('/api/auth/logout/'), {
         method: 'POST',
         headers: {
           'Authorization': `Token ${authToken}`,

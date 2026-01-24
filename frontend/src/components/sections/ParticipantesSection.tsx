@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { getApiUrl } from '../../utils/api';
 
 interface Team {
   id: number;
@@ -16,7 +17,7 @@ const ParticipantesSection: React.FC = () => {
   useEffect(() => {
     const fetchTeams = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/teams/');
+        const response = await axios.get(getApiUrl('/api/teams/'));
         setTeams(response.data);
       } catch (error) {
         console.error('Error fetching teams:', error);
