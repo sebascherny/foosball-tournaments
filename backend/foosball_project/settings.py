@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'tournaments',
 ]
 
+INSTALLED_APPS += ['axes']
+
 MIDDLEWARE = [
+    'axes.middleware.AxesMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -48,6 +51,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+AXES_FAILURE_LIMIT = 5
+AXES_COOLOFF_TIME = 1  # hour
 
 ROOT_URLCONF = 'foosball_project.urls'
 
