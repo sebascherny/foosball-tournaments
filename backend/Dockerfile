@@ -5,9 +5,9 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-RUN python backend/manage.py migrate
-RUN python backend/manage.py collectstatic --noinput
-RUN python backend/manage.py createsuperuser --noinput || true
+# RUN python manage.py migrate
+RUN python manage.py collectstatic --noinput
+RUN python manage.py createsuperuser --noinput || true
 
 COPY . .
 
