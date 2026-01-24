@@ -28,8 +28,10 @@ services:
       - DB_USER=postgres
       - DB_PASSWORD=postgres
       - DB_PORT=5432
+      - USE_SQLITE=${USE_SQLITE:-false}
     volumes:
       - ./backend:/app
+      - sqlite_data:/app/data
     command: python manage.py runserver 0.0.0.0:8000
 
   frontend:
@@ -46,3 +48,4 @@ services:
 
 volumes:
   postgres_data:
+  sqlite_data:

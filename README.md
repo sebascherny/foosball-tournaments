@@ -71,10 +71,40 @@ A comprehensive web application for managing foosball tournaments with Django ba
    ```
 
 4. **Access the application**
-   - Frontend: http://localhost:3000
+   - Frontend: http://localhost:3001
    - Backend API: http://localhost:8000
    - Django Admin: http://localhost:8000/admin
-   - Admin Panel: http://localhost:3000/admin
+   - Admin Panel: http://localhost:3001/admin-panel
+
+#### Using SQLite Database (Alternative)
+
+For simpler setup or development without PostgreSQL:
+
+1. **Using environment variable**
+   ```bash
+   # Set environment variable and start
+   USE_SQLITE=true docker-compose up --build
+   ```
+
+2. **Using dedicated SQLite compose file**
+   ```bash
+   # Use the SQLite-specific docker-compose file
+   docker-compose -f docker-compose.sqlite.yml up --build
+   ```
+
+3. **Local development with SQLite**
+   ```bash
+   # Set environment variable in your shell
+   export USE_SQLITE=true
+   
+   # Or create a .env file in backend directory
+   echo "USE_SQLITE=true" > backend/.env
+   
+   # Run migrations and start
+   cd backend
+   python manage.py migrate
+   python manage.py runserver
+   ```
 
 #### Docker Management Commands
 

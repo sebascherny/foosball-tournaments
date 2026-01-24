@@ -77,6 +77,21 @@ const Home: React.FC = () => {
         <ClasificacionSection group="C" />
         <GallerySection />
       </main>
+      
+      {/* Admin Panel Access */}
+      <footer className="bg-gray-800 text-white py-4">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <p className="text-sm text-gray-400">
+            © 2024 Foosball Tournaments | 
+            <a 
+              href="/admin-panel" 
+              className="ml-2 text-blue-400 hover:text-blue-300 underline"
+            >
+              Admin Panel
+            </a>
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
