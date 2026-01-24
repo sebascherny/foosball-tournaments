@@ -4,10 +4,43 @@ const ReglamentoSection: React.FC = () => {
   return (
     <section id="reglamento" className="section-container bg-gray-50">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl font-bold text-gray-800 mb-8">REGLAMENTO</h2>
+        {/* Palestina SVG with overlay text */}
+        <div className="relative w-full mb-8">
+          <img 
+            src="/images/loukanikos/palestina.svg" 
+            alt="Palestina" 
+            className="w-full h-auto"
+          />
+          <div className="absolute inset-0 flex flex-col">
+            <div className="flex-1 flex items-center justify-center">
+              <h1 className="text-center text-white px-4 max-w-2xl leading-relaxed text-3xl">
+                Bienvenidxs
+              </h1>
+            </div>
+            <div className="flex-1 flex items-center justify-center">
+              <p className="text-center text-black font-medium px-4 max-w-2xl leading-relaxed">
+                ... y gracias por seguir. Queremos agradeceros ,<br/>
+                tanto a lxs que acabais de llegar, como a lxs que no os vais ni con<br/>
+                lejia, que decidais formar parte de esta pequeña aventura que es<br/>
+                la liga de futbolín Loukanikos.
+              </p>
+            </div>
+            <div className="flex-1"></div>
+          </div>
+        </div>
+        
+        <div className="flex items-center justify-center mb-8">
+          <img 
+            src="/images/loukanikos/louka_futbolin_o_muerte.png" 
+            alt="Louka Futbolin o Muerte" 
+            className="w-24 h-24 mr-4"
+          />
+          <h2 className="text-4xl font-bold text-gray-800">REGLAMENTO</h2>
+        </div>
+        
         <div className="bg-white rounded-lg shadow-lg p-8 text-left">
           <div className="prose prose-lg max-w-none">
-            <h3 className="text-2xl font-semibold text-primary-600 mb-4">Reglas del Torneo</h3>
+            {/* <h3 className="text-2xl font-semibold text-primary-600 mb-4">Reglas del Torneo</h3> */}
             <p className="text-gray-700 mb-6">
               Lo primero de todo es aclarar que, siempre que se acuerde de antemano por ambas partes, estas normas podrán alterarse.
             </p>
@@ -33,17 +66,14 @@ const ReglamentoSection: React.FC = () => {
               En la fase de eliminatoria el saque tendrá que ser desde la barra de media.
             </p>
 
-            <h4 className="text-xl font-semibold font-underline text-gray-800 mb-3">Saque desde atrás:</h4>
-            <p className="text-gray-700 mb-4">
-              La posesion inicial se podra decidir de dos maneras:
-            </p>
-              <ul>
-                <li>Se tomara posesion de la bola con uno de los dos jugadores de la barra de defensa.</li>
-                <li>Antes de poder poner la bola en juego se preguntara al equipo contrario si estan preparados para empezar.</li>
-                <li>(i.e.: “¿Vale? - vale”)</li>
-              </ul>
+            <h4 className="font-semibold underline text-gray-800 mb-3">Saque desde atrás:</h4>
+            <ul>
+              <li>Se tomara posesion de la bola con uno de los dos jugadores de la barra de defensa.</li>
+              <li>Antes de poder poner la bola en juego se preguntara al equipo contrario si estan preparados para empezar.</li>
+              <li>(i.e.: “¿Vale? - vale”)</li>
+            </ul>
 
-            <h4 className="text-xl font-semibold font-underline text-gray-800 mb-3">Saque de media:</h4>
+            <h4 className="font-semibold underline text-gray-800 mb-3">Saque de media:</h4>
             <p className="text-gray-700 mb-4">
             </p>
               <ul>
@@ -74,7 +104,7 @@ disparo.
                 <li>bola muerta ente la barra de ataque y barra de media: saque para el equipo con saque en esa bola.</li>
                 <li>bola muerta en el centro: saque para el equipo con saque en esa bola.</li>
                 <li>Para poder coger la bola con la mano se debera pedir permiso al oponente.</li>
-                <li>Se reanudara de acuerdo la las normas de puesta en juego</li>
+                <li>Se reanudara de acuerdo la las normas de <span className="underline">puesta en juego</span></li>
               </ul>
 
             <h4 className="text-xl font-semibold text-gray-800 mb-3">GOL</h4>
@@ -102,23 +132,7 @@ disparo.
             </p>
 
             <h4 className="text-xl font-semibold text-gray-800 mb-3">PROHIBICIONES Y JUEGO LIMPIO:</h4>
-            <p className="text-gray-700 mb-4">
-              La posesion inicial se podra decidir de dos maneras:
-            </p>
-              <ul>
-                <li>Sacando desde el centro del campo por el orificio del lateral.</li>
-                <li>Tras sorteo de la bola.</li>
-              </ul>
-              <p className="text-gray-700 mb-4">
-              Indiferentemete de como se realice el saque inicial, los siguientes saques de comienzo de partida los realizara el equipo que haya
-              perdido la partida anterior.
-            </p>
-
-            <h4 className="text-xl font-semibold text-gray-800 mb-3">Saque</h4>
-            <p className="text-gray-700 mb-4">
-            </p>
             <ul>
-              <li></li>
               <li>Ruleta o molinillo. Se considera "ruleta" la vuelta sin control de la barra de mas de 720°.</li>
               <li>Golpeo con las barras en los laterales. Cualquier movimiento, ya sea en ataque o en defensa, que incurra en golpeos en los
                 laterales que puedan afectar al oponente, serán considerados falta, y la posesión pasará al equipo contrario en la misma barra
@@ -128,8 +142,8 @@ disparo.
               <li>Gritos: evitar gritar y distraer al contrario de forma intencionada.</li>
               <li>Manos: No se podra introducir la mano en el campo ni tocar la bola si esta está en juego. </li>
             </ul>
-
-            <p className="text-gray-700 mb-4">
+            <br/>
+            <p className="mb-4">
               Y recordad, el futbolín y esta liga son para DIVERTIRSE. Respetad a vuestrx contrarix, respetad al bar, y disfrutad!
             </p>
           </div>

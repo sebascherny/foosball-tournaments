@@ -39,9 +39,9 @@ const ClasificacionSection: React.FC<ClasificacionSectionProps> = ({ group }) =>
   }, [group]);
 
   return (
-    <section id={`clasificacion-${group.toLowerCase()}`} className="section-container bg-yellow-50">
+    <section id={`clasificacion-${group.toLowerCase()}`} className="section-container bg-yellow-50 py-8">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-gray-800 mb-12 text-center">CLASIFICACIÓN - GRUPO {group}</h2>
+        <h2 className="text-4xl font-bold text-gray-800 mb-8 text-center">CLASIFICACIÓN - GRUPO {group}</h2>
         
         {loading ? (
           <div className="text-center">

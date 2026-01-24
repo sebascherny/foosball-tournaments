@@ -4,6 +4,7 @@ import InicioSection from './sections/InicioSection';
 import ReglamentoSection from './sections/ReglamentoSection';
 import FuncionamientoSection from './sections/FuncionamientoSection';
 import ParticipantesSection from './sections/ParticipantesSection';
+import JornadasSection from './sections/JornadasSection';
 import ClasificacionSection from './sections/ClasificacionSection';
 import GallerySection from './sections/GallerySection';
 
@@ -25,7 +26,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['inicio', 'reglamento', 'funcionamiento', 'participantes', 'clasificacion-a', 'clasificacion-b', 'clasificacion-c', 'gallery'];
+      const sections = ['inicio', 'reglamento', 'funcionamiento', 'participantes', 'jornadas', 'clasificacion-a', 'clasificacion-b', 'clasificacion-c', 'gallery'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -72,9 +73,12 @@ const Home: React.FC = () => {
         <ReglamentoSection />
         <FuncionamientoSection />
         <ParticipantesSection />
-        <ClasificacionSection group="A" />
-        <ClasificacionSection group="B" />
-        <ClasificacionSection group="C" />
+        <JornadasSection />
+        <div className="space-y-4">
+          <ClasificacionSection group="A" />
+          <ClasificacionSection group="B" />
+          <ClasificacionSection group="C" />
+        </div>
         <GallerySection />
       </main>
       
