@@ -5,6 +5,7 @@ Django settings for foosball_project project.
 from pathlib import Path
 from decouple import config
 import os
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -72,7 +73,8 @@ WSGI_APPLICATION = 'foosball_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-USE_SQLITE = config('USE_SQLITE', default=False, cast=bool)
+USE_SQLITE = config('USE_SQLITE', '') in ('true', '1', 't', 'True', 'T')
+POSTGRES_URL = config('POSTGRES_URL', default='')
 
 if USE_SQLITE:
     DATABASES = {
@@ -81,7 +83,13 @@ if USE_SQLITE:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+elif POSTGRES_URL:
+    # Use POSTGRES_URL if provided
+    DATABASES = {
+        'default': dj_database_url.parse(POSTGRES_URL)
+    }
 else:
+    # Fall back to individual PostgreSQL environment variables
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
@@ -159,6 +167,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     "http://localhost:3001",
     "http://127.0.0.1:3001",
+    "*",
 ]
 
 CORS_ALLOW_CREDENTIALS = True

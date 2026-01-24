@@ -22,6 +22,7 @@ services:
       - db
     environment:
       - DATABASE_URL=postgresql://postgres:postgres@db:5432/foosball_tournaments
+      - POSTGRES_URL=postgresql://postgres:postgres@db:5432/foosball_tournaments
       - DEBUG=1
       - DB_HOST=db
       - DB_NAME=foosball_tournaments
