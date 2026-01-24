@@ -13,4 +13,4 @@ factory-boy==3.3.0
 requests==2.31.0
 gunicorn
 dj-database-url==2.1.0
-django-axes # rate limit
+django-axes==8.1.0 # rate limit
