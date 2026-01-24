@@ -41,15 +41,20 @@ INSTALLED_APPS = [
 INSTALLED_APPS += ['axes']
 
 MIDDLEWARE = [
-    'axes.middleware.AxesMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'axes.middleware.AxesMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+AUTHENTICATION_BACKENDS = [
+    "axes.backends.AxesStandaloneBackend",   # Axes checks lockouts
+    "django.contrib.auth.backends.ModelBackend",  # Default Django auth
 ]
 
 AXES_FAILURE_LIMIT = 5
@@ -173,7 +178,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     "http://localhost:3001",
     "http://127.0.0.1:3001",
-    "*",
+    "https://foosball-tournaments-fnrqp8v43-sebastians-projects-55b32c0e.vercel.app",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
