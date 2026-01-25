@@ -179,6 +179,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3001",
     "http://127.0.0.1:3001",
     "https://foosball-tournaments-fnrqp8v43-sebastians-projects-55b32c0e.vercel.app",
+    "https://foosball-tournaments.onrender.com",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
