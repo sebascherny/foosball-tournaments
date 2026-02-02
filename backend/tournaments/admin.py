@@ -2,10 +2,43 @@ from django.contrib import admin
 from .models import Team, Classification, Participant, GalleryImage, Match, MatchSeries
 
 
+def assign_to_group_a(modeladmin, request, queryset):
+    """Admin action to assign selected teams to Group A"""
+    # Only assign teams that don't have a group assigned
+    unassigned_teams = queryset.filter(group__isnull=True)
+    updated_count = unassigned_teams.update(group='A')
+    
+    if updated_count:
+        modeladmin.message_user(
+            request,
+            f"Successfully assigned {updated_count} team(s) to Group A."
+        )
+    else:
+        modeladmin.message_user(
+            request,
+            "No unassigned teams were selected.",
+            level='WARNING'
+        )
+
+assign_to_group_a.short_description = "Assign to Group A"
+
+
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
-    list_display = ['name', 'created_at']
+    list_display = ['name', 'group', 'created_at']
+    list_filter = ['group', 'created_at']
     search_fields = ['name']
+    actions = [assign_to_group_a]
+    
+    def get_queryset(self, request):
+        """Show all teams but highlight unassigned ones"""
+        return super().get_queryset(request)
+    
+    def changelist_view(self, request, extra_context=None):
+        """Add context for unassigned teams"""
+        extra_context = extra_context or {}
+        extra_context['unassigned_count'] = self.model.objects.filter(group__isnull=True).count()
+        return super().changelist_view(request, extra_context=extra_context)
 
 
 @admin.register(Classification)

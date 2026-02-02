@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navigation from './Navigation';
 import InicioSection from './sections/InicioSection';
+import BanderaSection from './sections/BanderaSection';
 import ReglamentoSection from './sections/ReglamentoSection';
 import FuncionamientoSection from './sections/FuncionamientoSection';
 import ParticipantesSection from './sections/ParticipantesSection';
@@ -70,6 +71,7 @@ const Home: React.FC = () => {
       />
       <main>
         <InicioSection />
+        <BanderaSection />
         <ReglamentoSection />
         <FuncionamientoSection />
         <ParticipantesSection />

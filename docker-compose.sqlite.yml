@@ -10,10 +10,13 @@ services:
     environment:
       - USE_SQLITE=true
       - DEBUG=1
+      - DJANGO_SUPERUSER_USERNAME=admin
+      - DJANGO_SUPERUSER_EMAIL=admin@example.com
+      - DJANGO_SUPERUSER_PASSWORD=admin123
     volumes:
       - ./backend:/app
       - sqlite_data:/app/data
-    command: python manage.py runserver 0.0.0.0:8000
+    command: sh -c "python manage.py migrate && python manage.py create_superuser_if_none && python manage.py runserver 0.0.0.0:8000"
 
   frontend:
     build:
